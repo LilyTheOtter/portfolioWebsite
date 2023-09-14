@@ -4,23 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <script type="text/javascript">
-        function display_dateTime() {
-            var refresh = 1000; // Refresh rate in milli seconds
-            mytime = setTimeout('dateTime()', refresh)
-        }
-
-        function dateTime() {
-            var date = new Date()
-            var day = date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear();
-            var time = date.getHours() + ":" + date.getMinutes();
-            document.getElementById('display_date').innerHTML = day;
-            document.getElementById('display_time').innerHTML = time;
-            display_dateTime();
-        }
-    </script>
+    <script type="text/javascript" src="javascript.js"></script>
 </head>
 
 <body onload=dateTime();>
@@ -43,5 +30,4 @@
         </div>
     </div>
 </body>
-
 </html>

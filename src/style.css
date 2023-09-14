@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Noto Sans';
 }
 
 .wrapper {
@@ -16,6 +17,7 @@ body {
 }
 
 .time {
+    color: white;
     height: 5vh;
     width: 5vw;
     justify-content: center;
