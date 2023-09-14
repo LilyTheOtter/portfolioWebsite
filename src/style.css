@@ -11,15 +11,40 @@ body {
 .taskbar {
     background-color: #2F4365;
     height: 5vh;
+    justify-content: space-between;
+    display: flex;
+}
+
+.time {
+    height: 5vh;
+    width: 5vw;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#display_time {
+    font-size: 2vh;
+}
+#display_date {
+    font-size: 1.7vh;
+    margin-left: 5px;
 }
 
 .startMenuButton {
     width: 5vh;
     height: 5vh;
+    border-right-style: solid;
+    border-width: 2px;
 }
 
 .startMenuButton img {
     cursor: not-allowed;
+    width: 90%;
+    height: 90%;
+    display: block;
+    margin: auto;
 }
 
 .desktop{
