@@ -13,7 +13,40 @@
 <body onload=dateTime();>
     <div class=wrapper>
         <div class=desktop>
-
+            <div class="apps">
+                <div class="icon">
+                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                    <p>About me.pdf</p>
+                </div>
+                <div class="icon">
+                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                    <p>Projects summary.pdf</p>
+                </div>
+                <div class="icon">
+                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                    <p>Projects summary.pdf</p>
+                </div>
+                <div class="icon">
+                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                    <p>Projects summary.pdf</p>
+                </div>
+                <div class="icon">
+                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                    <p>Projects summary.pdf</p>
+                </div>
+                <div class="icon">
+                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                    <p>Projects summary.pdf</p>
+                </div>
+                <div class="icon">
+                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                    <p>Projects summary.pdf</p>
+                </div>
+                <div class="icon">
+                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                    <p>Projects summary.pdf</p>
+                </div>
+            </div>
         </div>
         <div class=taskbar>
             <div class="taskbarLeft">
@@ -30,4 +63,5 @@
         </div>
     </div>
 </body>
+
 </html>

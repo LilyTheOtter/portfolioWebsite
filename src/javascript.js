@@ -13,9 +13,10 @@ function dateTime() {
   // Get current time in format mm:ss
   var time = 
     date.getHours().toString().padStart(2, "0") + ":" + date.getMinutes().toString().padStart(2, "0");
-  
+  // Inserts date and time into html document
   document.getElementById("display_date").innerHTML = day;
   document.getElementById("display_time").innerHTML = time;
+  // start 1 second timer before repeating
   refresh_dateTime();
 }
 

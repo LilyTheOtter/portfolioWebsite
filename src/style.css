@@ -49,6 +49,36 @@ body {
     margin: auto;
 }
 
+.apps {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 95vh;
+    align-content: flex-start;
+}
+
+.icon {
+    margin-top: 15px;
+    margin-left: 15px;
+    height: clamp(45px, 16.45vh, 160px);
+    width: clamp(20px, 6vw, 160px);
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    text-shadow: black 1px 1px 1px;
+    font-size: 2vh;
+    overflow-wrap: break-word;
+}
+
+.icon p {
+    margin: 0px;
+}
+
+.icon img {
+    align-self: center;
+    height: clamp(5px, 8vh, 90px);
+}
+
 .desktop{
 height: 95vh;
 width: 100vw;
