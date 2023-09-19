@@ -11,6 +11,7 @@ populate all secrets
 ```bash
 nano .secrets/WEBPASSWORD_FILE
 ```
+Launch the docker compose
 ```bash
 docker compose up -d
 ```
