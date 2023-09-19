@@ -116,6 +116,7 @@ body {
   text-shadow: black 1px 1px 1px;
   font-size: 2vh;
   overflow-wrap: break-word;
+  cursor: pointer;
 }
 
 .icon p {
