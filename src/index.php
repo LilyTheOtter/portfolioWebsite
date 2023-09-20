@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'> -->
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <script type="text/javascript" src="javascript.js"></script>
@@ -31,7 +31,12 @@
                     <div class="pdf-overlay" id="overlay1">
                         <div class="pdf-overlay-window">
                             <div class="overlay-content-topbar">
+                                <div class="overlay-content-topbar-icon">
+                                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                </div>
+                                <div class="overlay-content-topbar-closebutton">
                                 <button class="closeButton" id="closeOverlay1"><img src="./images/cross.svg" alt="Close button"></button>
+                                </div>
                             </div>
                             <h2>About me</h2>
                             <div class="pdf-overlay-content">
@@ -53,19 +58,19 @@
                         </div>
                     </div>
                     <div class="explorer-overlay" id="overlay3">
-                        <div class="explorer-overlay-grid">
-                            <div class="explorer-overlay-window">
-                                <div class="overlay-content-topbar">
-                                    <button class="closeButton" id="closeOverlay3"><img src="./images/cross.svg" alt="Close button"></button>
-                                </div>
+                        <div class="explorer-overlay-window">
+                            <div class="explorer-overlay-grid">
                                 <div class="explorer-overlay-ribbon">
-
+                                    <div class="overlay-content-topbar">
+                                        <button class="closeButton" id="closeOverlay3"><img src="./images/cross.svg" alt="Close button"></button>
+                                    </div>
+                                    <p>test1</p>
                                 </div>
                                 <div class="explorer-overlay-navigationPane">
-
+                                    <p>test2</p>
                                 </div>
                                 <div class="explorer-overlay-content">
-
+                                    <p>test3</p>
                                 </div>
                             </div>
                         </div>
