@@ -63,6 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
       isDragging = true;
       offsetX = e.clientX - overlay.offsetLeft;
       offsetY = e.clientY - overlay.offsetTop;
+      // Prevent text selection while dragging
+      document.body.style.userSelect = "none";
+    });
+
+    document.addEventListener("mouseup", function () {
+      overlayTaskbar.style.removeProperty("cursor");
+      isDragging = false;
+      // Restore text selection
+      document.body.style.userSelect = "auto";
     });
   });
 });
