@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlayTaskbar = overlay.querySelector(
       ".overlay-content-topbar"
     );
+    const closeButton = overlay.querySelector(".overlay-content-topbar-closebutton");
+    const iconButton = overlay.querySelector(".overlay-content-topbar-icon");
 
     let isDragging = false;
     let offsetX, offsetY;
@@ -59,12 +61,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     overlayTaskbar.addEventListener("mousedown", function (e) {
-      overlayTaskbar.style.cursor = "grabbing";
-      isDragging = true;
-      offsetX = e.clientX - overlay.offsetLeft;
-      offsetY = e.clientY - overlay.offsetTop;
-      // Prevent text selection while dragging
-      document.body.style.userSelect = "none";
+      if (e.target !== closeButton && e.target !== iconButton) {
+        overlayTaskbar.style.cursor = "grabbing";
+        isDragging = true;
+        offsetX = e.clientX - overlay.offsetLeft;
+        offsetY = e.clientY - overlay.offsetTop;
+        // Prevent text selection while dragging
+        document.body.style.userSelect = "none";
+      }
+    });
+
+    closeButton.addEventListener("mousedown", function (e) {
+      e.stopPropagation(); // Prevent dragging when holding close button
+    });
+
+    iconButton.addEventListener("mousedown", function (e) {
+      e.stopPropagation(); // Prevent dragging when holding close button
     });
 
     document.addEventListener("mouseup", function () {
