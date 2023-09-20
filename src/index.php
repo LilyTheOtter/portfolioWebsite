@@ -35,7 +35,7 @@
                                     <img src="./images/application-pdf.svg" alt="PDF Icon">
                                 </div>
                                 <div class="overlay-content-topbar-closebutton">
-                                <button class="closeButton" id="closeOverlay1"><img src="./images/cross.svg" alt="Close button"></button>
+                                    <button class="closeButton" id="closeOverlay1"><img src="./images/cross.svg" alt="Close button"></button>
                                 </div>
                             </div>
                             <h2>About me</h2>
@@ -49,6 +49,9 @@
                     <div class="pdf-overlay" id="overlay2">
                         <div class="pdf-overlay-window">
                             <div class="overlay-content-topbar">
+                                <div class="overlay-content-topbar-icon">
+                                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                </div>
                                 <button class="closeButton" id="closeOverlay2"><img src="./images/cross.svg" alt="Close button"></button>
                             </div>
                             <h2>My projects</h2>
@@ -57,21 +60,45 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="explorer-overlay" id="overlay3">
                         <div class="explorer-overlay-window">
                             <div class="explorer-overlay-grid">
                                 <div class="explorer-overlay-ribbon">
                                     <div class="overlay-content-topbar">
+                                        <div class="overlay-content-topbar-icon">
+                                            <img src="./images/system-file-manager.svg" alt="PDF Icon">
+                                        </div>
                                         <button class="closeButton" id="closeOverlay3"><img src="./images/cross.svg" alt="Close button"></button>
                                     </div>
-                                    <p>test1</p>
+
                                 </div>
                                 <div class="explorer-overlay-navigationPane">
-                                    <p>test2</p>
+
                                 </div>
                                 <div class="explorer-overlay-content">
-                                    <p>test3</p>
+                                    <div class="icon" id="icon4">
+                                        <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                        <p>Test.pdf</p>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pdf-overlay" id="overlay4">
+                        <div class="pdf-overlay-window">
+                            <div class="overlay-content-topbar">
+                                <div class="overlay-content-topbar-icon">
+                                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                </div>
+                                <div class="overlay-content-topbar-closebutton">
+                                    <button class="closeButton" id="closeOverlay4"><img src="./images/cross.svg" alt="Close button"></button>
+                                </div>
+                            </div>
+                            <h2>Test</h2>
+                            <div class="pdf-overlay-content">
+                                <p>test</p>
                             </div>
                         </div>
                     </div>

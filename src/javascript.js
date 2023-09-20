@@ -70,14 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.userSelect = "none";
       }
     });
+    // this breaks the explorer overlay for some reason, need to figure out why
+    // closeButton.addEventListener("mousedown", function (e) {
+    //   e.stopPropagation(); // Prevent dragging when holding close button
+    // });
 
-    closeButton.addEventListener("mousedown", function (e) {
-      e.stopPropagation(); // Prevent dragging when holding close button
-    });
-
-    iconButton.addEventListener("mousedown", function (e) {
-      e.stopPropagation(); // Prevent dragging when holding close button
-    });
+    // iconButton.addEventListener("mousedown", function (e) {
+    //   e.stopPropagation(); // Prevent dragging when holding close button
+    // });
 
     document.addEventListener("mouseup", function () {
       overlayTaskbar.style.removeProperty("cursor");
