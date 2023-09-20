@@ -23,42 +23,46 @@ function dateTime() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the overlay and close button elements
-  const overlay = document.getElementById("overlay");
-  const closeOverlayButton = document.getElementById("closeOverlay");
-  const overlayTaskbar = document.querySelector('.aboutme-overlay-content-topbar');
+  // Get all elements with the class "icon"
+  const icons = document.querySelectorAll(".icon");
 
-  let isDragging = false;
-  let offsetX, offsetY;
+  icons.forEach((icon, index) => {
+    const overlay = document.getElementById(`overlay${index + 1}`);
+    const closeOverlayButton = document.getElementById(
+      `closeOverlay${index + 1}`
+    );
+    const overlayTaskbar = overlay.querySelector(
+      ".overlay-content-topbar"
+    );
 
-  // Get the icon elements
-  const aboutmeIcon = document.getElementById("aboutmeIcon");
-  // Add click event listener to open the overlay
-  aboutmeIcon.addEventListener("click", function () {
-    overlay.style.display = "flex";
-  });
+    let isDragging = false;
+    let offsetX, offsetY;
 
-  // Add click event listener to close the overlay
-  closeOverlayButton.addEventListener("click", function () {
-    overlay.style.display = "none";
-  });
+    icon.addEventListener("click", function () {
+      overlay.style.display = "flex";
+    });
 
-  document.addEventListener("mousemove", function (e) {
-    if (isDragging) {
-      overlay.style.left = e.clientX - offsetX + "px";
-      overlay.style.top = e.clientY - offsetY + "px";
-    }
-  });
+    closeOverlayButton.addEventListener("click", function () {
+      overlay.style.display = "none";
+    });
 
-  document.addEventListener("mouseup", function () {
-    overlayTaskbar.style.removeProperty("cursor")
-    isDragging = false;
-  });
+    document.addEventListener("mousemove", function (e) {
+      if (isDragging) {
+        overlay.style.left = e.clientX - offsetX + "px";
+        overlay.style.top = e.clientY - offsetY + "px";
+      }
+    });
 
-  overlayTaskbar.addEventListener("mousedown", function (e) {
-    overlayTaskbar.style.cursor = "grabbing"
-    isDragging = true;
-    offsetX = e.clientX - overlay.offsetLeft;
-    offsetY = e.clientY - overlay.offsetTop;
+    document.addEventListener("mouseup", function () {
+      overlayTaskbar.style.removeProperty("cursor");
+      isDragging = false;
+    });
+
+    overlayTaskbar.addEventListener("mousedown", function (e) {
+      overlayTaskbar.style.cursor = "grabbing";
+      isDragging = true;
+      offsetX = e.clientX - overlay.offsetLeft;
+      offsetY = e.clientY - overlay.offsetTop;
+    });
   });
 });
