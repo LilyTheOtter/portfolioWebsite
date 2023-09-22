@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <script type="text/javascript" src="javascript.js"></script>
@@ -25,6 +25,10 @@
                 <div class="icon" id="icon3">
                     <img src="./images/system-file-manager.svg" alt="PDF Icon">
                     <p>All projects</p>
+                </div>
+                <div class="icon" id="icon4">
+                    <img src="./images/info.svg" alt="Info center Icon">
+                    <p>Info center</p>
                 </div>
                 <div>
 
@@ -77,7 +81,7 @@
 
                                 </div>
                                 <div class="explorer-overlay-content">
-                                    <div class="icon" id="icon4">
+                                    <div class="icon" id="icon5">
                                         <img src="./images/application-pdf.svg" alt="PDF Icon">
                                         <p>Test.pdf</p>
                                     </div>
@@ -86,22 +90,31 @@
                         </div>
                     </div>
 
-                    <div class="pdf-overlay" id="overlay4">
+                    
+                    <div class="info-overlay" id="overlay4">
+                        <div class="overlay-content-topbar-closebutton">
+                            <button class="closeButton" id="closeOverlay4"><img src="./images/cross.svg" alt="Close button"></button>
+                        </div>
+                        <img src="./images/clippy.png" alt="Image of clippy">
+                    </div>
+                    <div class="pdf-overlay" id="overlay5">
                         <div class="pdf-overlay-window">
                             <div class="overlay-content-topbar">
                                 <div class="overlay-content-topbar-icon">
                                     <img src="./images/application-pdf.svg" alt="PDF Icon">
                                 </div>
                                 <div class="overlay-content-topbar-closebutton">
-                                    <button class="closeButton" id="closeOverlay4"><img src="./images/cross.svg" alt="Close button"></button>
+                                    <button class="closeButton" id="closeOverlay5"><img src="./images/cross.svg" alt="Close button"></button>
                                 </div>
                             </div>
                             <h2>Test</h2>
                             <div class="pdf-overlay-content">
-                                <p>test</p>
+                                <p>test test</p>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

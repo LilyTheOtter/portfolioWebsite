@@ -1,3 +1,5 @@
+// TIME AND DATE SCRIPT
+
 // Function that refreshes the date and time in the taskbar
 function refresh_dateTime() {
   var refresh = 1000; // Refresh rate in milli seconds
@@ -21,6 +23,9 @@ function dateTime() {
   // start 1 second timer before repeating
   refresh_dateTime();
 }
+
+
+// OVERLAY SCRIPT
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get all elements with the class "icon"
@@ -70,14 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.userSelect = "none";
       }
     });
-    // this breaks the explorer overlay for some reason, need to figure out why
-    // closeButton.addEventListener("mousedown", function (e) {
-    //   e.stopPropagation(); // Prevent dragging when holding close button
-    // });
-
-    // iconButton.addEventListener("mousedown", function (e) {
-    //   e.stopPropagation(); // Prevent dragging when holding close button
-    // });
 
     document.addEventListener("mouseup", function () {
       overlayTaskbar.style.removeProperty("cursor");
