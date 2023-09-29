@@ -52,17 +52,6 @@ body {
   text-align: center;
 }
 
-.explorer-overlay {
-  display: none;
-  position: fixed;
-  top: 10vh;
-  left: 10vw;
-  width: 80vw;
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
-}
-
 .info-overlay {
   display: flex;
   width: 35vw;
@@ -83,6 +72,17 @@ body {
   height: 24vh;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.explorer-overlay {
+  display: none;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  width: 80vw;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .explorer-overlay-window {

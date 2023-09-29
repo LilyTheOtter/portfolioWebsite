@@ -3,7 +3,7 @@
 // Function that refreshes the date and time in the taskbar
 function refresh_dateTime() {
   var refresh = 1000; // Refresh rate in milli seconds
-  mytime = setTimeout("dateTime()", refresh);
+  setTimeout("dateTime()", refresh);
 }
 // Function for the date and time bottom right in the taskbar
 function dateTime() {
