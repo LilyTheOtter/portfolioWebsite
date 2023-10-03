@@ -29,6 +29,7 @@ function dateTime() {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get all elements with the class "icon"
+  
   const icons = document.querySelectorAll(".icon");
 
   icons.forEach((icon, index) => {
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlayTaskbar = overlay.querySelector(
       ".overlay-content-topbar"
     );
+
     const closeButton = overlay.querySelector(".overlay-content-topbar-closebutton");
     const iconButton = overlay.querySelector(".overlay-content-topbar-icon");
 
