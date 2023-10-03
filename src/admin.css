@@ -82,3 +82,55 @@ body {
   color: #ffffff;
   transition: background-color 0.2s;
 }
+.error {
+  display: block;
+  text-align: center;
+  color: red;
+}
+.content {
+  margin: 0 auto;
+  margin-top: 2vh;
+  justify-content: center;
+  height: 90vh;
+  background-color: #fff;
+  width: 85vw;
+  border-radius: 25px;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+.content div {
+  display: flex;
+}
+.content h1 {
+  text-align: center;
+  color: #000000;
+  font-size: clamp(1em, 4vh, 24px);
+  padding: clamp(1px, 2vh, 20px) 0 clamp(1px, 2vh, 20px) 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  background-color: #1d54a0;
+  width: 85vw;
+  margin: auto;
+  border-radius: 25px;
+}
+
+.nav-button {
+  display: block;
+  width: 29vw;
+  height: 75px;
+  margin: auto auto;
+  color: #fff;
+  text-align: center;
+  line-height: 75px;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.nav-button:hover {
+  background-color: #114b9c;
+}
