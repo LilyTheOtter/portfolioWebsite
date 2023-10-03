@@ -32,14 +32,14 @@ if ($stmt = $con->prepare('SELECT `id`, `password` FROM `Users` WHERE `username`
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['id'] = $id;
-            header('location: ../admin.php');
+            header('location: ../admin');
         } else {
             // Incorrect password
-            header('Location: ../login.php');
+            header('Location: ../login?error=incorrect');
         }
     } else {
         // Incorrect username
-        header('Location: ../login.php');
+        header('Location: ../login?error=incorrect');
     }
     $stmt->close();
 }
