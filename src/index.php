@@ -7,7 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <script type="text/javascript" src="javascript.js"></script>
+    <script defer type="text/javascript" src="javascript.js"></script>
 </head>
 
 <body onload=dateTime();>
@@ -33,6 +33,7 @@
                 <div>
 
                     <div class="info-overlay" id="overlay4">
+                        <div class="overlay-content-topbar" style="display: none;"></div>
                         <div id="closeOverlay4">
                             <div class="infoText">
                                 <h3>Welcome to my website</h3>
@@ -75,7 +76,7 @@
                         </div>
                     </div>
 
-                    <div class="explorer-overlay" id="overlay3">
+                    <div class="explorer-overlay" id="overlay3" >
                         <div class="explorer-overlay-window">
                             <div class="explorer-overlay-grid">
                                 <div class="explorer-overlay-ribbon">
@@ -90,6 +91,10 @@
 
                                 </div>
                                 <div class="explorer-overlay-content">
+                                    <div class="icon" id="icon5">
+                                        <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                        <p>Test.pdf</p>
+                                    </div>
                                     <div class="icon" id="icon6">
                                         <img src="./images/application-pdf.svg" alt="PDF Icon">
                                         <p>Test.pdf</p>
@@ -99,6 +104,20 @@
                                         <p>Info center</p>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pdf-overlay" id="overlay5">
+                        <div class="pdf-overlay-window">
+                            <div class="overlay-content-topbar">
+                                <div class="overlay-content-topbar-icon">
+                                    <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                </div>
+                                <button class="closeButton" id="closeOverlay5"><img src="./images/cross.svg" alt="Close button"></button>
+                            </div>
+                            <h2>My projects</h2>
+                            <div class="pdf-overlay-content">
+                                <p>This website</p>
                             </div>
                         </div>
                     </div>
