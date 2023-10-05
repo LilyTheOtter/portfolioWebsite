@@ -113,24 +113,34 @@ body {
   justify-content: center;
   align-items: center;
   height: 75px;
-  background-color: #1d54a0;
   width: 85vw;
-  margin: auto;
   border-radius: 25px;
+  gap: 20px;
+  margin-top: 15px;
 }
 
 .nav-button {
   display: block;
-  width: 29vw;
+  width: 15vw;
   height: 75px;
-  margin: auto auto;
   color: #fff;
+  background-color: #1d54a0;
   text-align: center;
   line-height: 75px;
   text-decoration: none;
   border-radius: 25px;
+  margin: 10px;
+  opacity: 0.8;
+}
+
+.nav-button img {
+  height: 65%;
+  vertical-align: middle;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(112deg)
+    brightness(104%) contrast(103%); /* source https://codepen.io/sosuke/pen/Pjoqqp, makes svg's white */
 }
 
 .nav-button:hover {
-  background-color: #114b9c;
+  background-color: #063e8d;
+  transform: scale(1.04);
 }

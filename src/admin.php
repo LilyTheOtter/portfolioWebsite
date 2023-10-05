@@ -19,11 +19,10 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
     <div class="content">
         <nav class="navbar">
-            <a href="../admin/newitem" class="nav-button"><p>hi</p></i></a>
-            <a href="../admin/main" class="nav-button"><i class="fa-duotone fa-house fa-2xl"></i></a>
-            <a href="../admin/logout" class="nav-button"><i class="fa-duotone fa-right-from-bracket fa-2xl"></i></a>
+            <a href="./newitem" class="nav-button" title="Go to users"><img src="./images/people.svg" alt="People icon"></a>
+            <a href="./main" class="nav-button" title="Add new content"><img src="./images/add-file.svg" alt="Add file icon"></a>
+            <a href="./logout" class="nav-button" title="Log out"><img src="./images/logout.svg" alt="Logout icon"></a>
         </nav>
-
     </div>
 </body>
 
