@@ -9,11 +9,156 @@
     <title>Document</title>
     <script defer type="text/javascript" src="javascript.js"></script>
 </head>
+<!--
+    Mogelijke manier om data dynamich in te laden via db:
+    - Sla de documenten op met pad/filename waarbij mogelijk / de desktop is. Zie gemaakte schets op tablet
+    - Laad dit in zoals hieronder maar ipv gelijk echo maak vul een array. (database responce sorted by path)
+    - Elk entry zonder ander path wordt in de array opgeslagen
+    - elke keer dat de loop een ander file path tegen komt echoed die alle dingen uit de array en gaat die verder met een lege array.
+    - Dit door tot je door alles heen bent.
+
+
+-->
 
 <body onload=dateTime();>
     <div class=wrapper>
         <div class=desktop>
             <div class="apps">
+                <?php
+                require_once "backend/connection.php";
+
+                $stmt = $con->prepare("SELECT `id`, `type`, `inside`, `location`, `filename`, `content` FROM `content` where `inside` = 'desktop'");
+                $stmt->execute();
+                $result = $stmt->get_result();
+                while ($row = $result->fetch_assoc()) {
+                    $id = $row['id'];
+                    $id = --$id;
+                    $type = $row['type'];
+                    $inside = $row['inside'];
+                    $location = $row['location'];
+                    $filename = $row['filename'];
+                    $content = $row['content'];
+
+                    switch ($type) {
+                        case 'pdf':
+                            echo '<div class="icon" id="icon' . $id . '">
+                            <img src="./images/application-pdf.svg" alt="PDF Icon">
+                            <p>' . $filename . '</p>
+                        </div>';
+                            echo '<div class="pdf-overlay" id="overlay' . $id . '">
+                            <div class="pdf-overlay-window">
+                                <div class="overlay-content-topbar">
+                                    <div class="overlay-content-topbar-icon">
+                                        <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                    </div>
+                                    <div class="overlay-content-topbar-closebutton">
+                                        <button class="closeButton" id="closeOverlay' . $id . '"><img src="./images/cross.svg" alt="Close button"></button>
+                                    </div>
+                                </div>
+                                <h2>' . $filename . '</h2>
+                                <div class="pdf-overlay-content">
+                                    <p>' . $content . '</p>
+                                </div>
+                            </div>
+                        </div>';
+                            break;
+
+                        case 'explorer':
+                            echo '<div class="icon" id="icon' . $id . '">
+                            <img src="./images/system-file-manager.svg" alt="PDF Icon">
+                            <p>' . $filename . '</p>
+                        </div>';
+                            echo '<div class="explorer-overlay" id="overlay' . $id . '">
+                            <div class="explorer-overlay-window">
+                                <div class="explorer-overlay-grid">
+                                    <div class="explorer-overlay-ribbon">
+                                        <div class="overlay-content-topbar">
+                                            <div class="overlay-content-topbar-icon">
+                                                <img src="./images/system-file-manager.svg" alt="PDF Icon">
+                                            </div>
+                                            <button class="closeButton" id="closeOverlay' . $id . '"><img src="./images/cross.svg" alt="Close button"></button>
+                                        </div>
+                                    </div>
+                                    <div class="explorer-overlay-navigationPane">';
+
+
+                            echo '</div>
+                                    <div class="explorer-overlay-content">';
+                            $stmt = $con->prepare("SELECT `id`, `type`, `inside`, `location`, `filename`, `content` FROM `content` where `inside` = 'explorer'");
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            while ($row = $result->fetch_assoc()) {
+                                $id = $row['id'];
+                                $id = --$id;
+                                $type = $row['type'];
+                                $inside = $row['inside'];
+                                $location = $row['location'];
+                                $filename = $row['filename'];
+                                $content = $row['content'];
+                                echo '<div class="icon" id="icon' . $id . '">
+                            <img src="./images/application-pdf.svg" alt="PDF Icon">
+                            <p>' . $filename . '</p>
+                        </div>';
+                                echo '<div class="pdf-overlay" id="overlay' . $id . '">
+                            <div class="pdf-overlay-window">
+                                <div class="overlay-content-topbar">
+                                    <div class="overlay-content-topbar-icon">
+                                        <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                    </div>
+                                    <div class="overlay-content-topbar-closebutton">
+                                        <button class="closeButton" id="closeOverlay' . $id . '"><img src="./images/cross.svg" alt="Close button"></button>
+                                    </div>
+                                </div>
+                                <h2>' . $filename . '</h2>
+                                <div class="pdf-overlay-content">
+                                    <p>' . $content . '</p>
+                                </div>
+                            </div>
+                        </div>';
+                            };
+                            echo '</div>
+                                    </div>
+                                </div>
+                            </div>';
+                            break;
+
+                        case 'desktop':
+
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+                ?>
+            </div>
+        </div>
+        <div class=taskbar>
+            <div class="taskbarLeft">
+                <div class=startMenuButton>
+                    <img src="./images/wip-icon.png" alt="Start menu button">
+                </div>
+            </div>
+            <div class="taskbarRight">
+                <div class=time>
+                    <span id='display_time'></span><br>
+                    <span id='display_date'></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<?php exit; ?>
+
+<body onload=dateTime();>
+    <div class=wrapper>
+        <div class=desktop>
+            <div class="apps">
+
                 <div class="icon" id="icon1">
                     <img src="./images/application-pdf.svg" alt="PDF Icon">
                     <p>About me.pdf</p>
@@ -76,7 +221,7 @@
                         </div>
                     </div>
 
-                    <div class="explorer-overlay" id="overlay3" >
+                    <div class="explorer-overlay" id="overlay3">
                         <div class="explorer-overlay-window">
                             <div class="explorer-overlay-grid">
                                 <div class="explorer-overlay-ribbon">
