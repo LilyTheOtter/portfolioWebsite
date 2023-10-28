@@ -16,18 +16,19 @@
             <div class="apps">
                 <?php
                 require_once "backend/connection.php";
-
-                $stmt = $con->prepare("SELECT `id`, `type`, `inside`, `location`, `filename`, `content` FROM `content` where `inside` = 'desktop'");
+                $id = 0;
+                $stmt = $con->prepare("SELECT `id`, `type`, `inside`, `location`, `filename`, `content` FROM `content` where `inside` = 'desktop' and `disabled` = '0'");
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while ($row = $result->fetch_assoc()) {
-                    $id = $row['id'];
-                    $id = --$id;
+                    $id++;
+                    $databaseId = $row['id'];
                     $type = $row['type'];
                     $inside = $row['inside'];
                     $location = $row['location'];
                     $filename = $row['filename'];
                     $content = $row['content'];
+
 
                     switch ($type) {
                         case 'pdf':
@@ -58,8 +59,7 @@
                             echo '<div class="icon" id="icon' . $id . '">
                             <img src="./images/system-file-manager.svg" alt="PDF Icon">
                             <p>' . $filename . '</p>
-                        </div>';
-                            echo '<div class="explorer-overlay" id="overlay' . $id . '">
+                        </div> <div class="explorer-overlay" id="overlay' . $id . '">
                             <div class="explorer-overlay-window">
                                 <div class="explorer-overlay-grid">
                                     <div class="explorer-overlay-ribbon">
@@ -70,19 +70,15 @@
                                             <button class="closeButton" id="closeOverlay' . $id . '"><img src="./images/cross.svg" alt="Close button"></button>
                                         </div>
                                     </div>
-                                    <div class="explorer-overlay-navigationPane">';
-
-
-                            echo '</div>
+                                    <div class="explorer-overlay-navigationPane"></div>
                                     <div class="explorer-overlay-content">';
-                            $explorerId = ++$id;
-                            $statement = $con->prepare("SELECT `id`, `type`, `inside`, `location`, `filename`, `content` FROM `content` where `inside` = 'explorer' and `location` = ?");
-                            $statement->bind_param("i", $explorerId);
+
+                            $statement = $con->prepare("SELECT `id`, `type`, `inside`, `location`, `filename`, `content` FROM `content` where `inside` = 'explorer' and `location` = ?  and `disabled` = '0'");
+                            $statement->bind_param("i", $databaseId);
                             $statement->execute();
                             $results = $statement->get_result();
                             while ($row = $results->fetch_assoc()) {
-                                $id = $row['id'];
-                                $id = --$id;
+                                $id++;
                                 $type = $row['type'];
                                 $inside = $row['inside'];
                                 $location = $row['location'];
@@ -91,8 +87,7 @@
                                 echo '<div class="icon" id="icon' . $id . '">
                             <img src="./images/application-pdf.svg" alt="PDF Icon">
                             <p>' . $filename . '</p>
-                        </div>';
-                                echo '<div class="pdf-overlay" id="overlay' . $id . '">
+                        </div> <div class="pdf-overlay" id="overlay' . $id . '">
                             <div class="pdf-overlay-window">
                                 <div class="overlay-content-topbar">
                                     <div class="overlay-content-topbar-icon">
@@ -144,4 +139,3 @@
 </body>
 
 </html>
-
