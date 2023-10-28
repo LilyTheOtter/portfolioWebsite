@@ -13,7 +13,7 @@ if (!isset($_SESSION['loggedin'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin.css">
-    <title>Document</title>
+    <title>Admin page</title>
 </head>
 
 <body>
@@ -54,7 +54,7 @@ if (!isset($_SESSION['loggedin'])) {
                         $location . '</td><td>' .
                         $filename . '</td>
                     <td>
-                        <a href="disable?id=' . $id . '" title="Enable/disable" data-toggle="tooltip">';
+                        <a href="backend/disableContent?id=' . $id . '" title="Enable/disable" data-toggle="tooltip">';
                     if (!$disabled) {
                         echo '<img src="./images/eye.svg" alt="Eye Icon">';
                     } else {
@@ -63,7 +63,7 @@ if (!isset($_SESSION['loggedin'])) {
                     echo '</span></a>
                         <a href="edit?id=' . $id . '" title="Update Record" data-toggle="tooltip"><img src="./images/pencil.svg" alt="Pencil Icon"></span></a>'
                         . '</span></a>
-                        <a href="delete?id=' . $id . '" title="Update Record" data-toggle="tooltip"><img src="./images/trash.svg" alt="Trash Icon"></span></a>' .
+                        <a href="delete?id=' . $id . '" title="Delete Record" data-toggle="tooltip"><img src="./images/trash.svg" alt="Trash Icon"></span></a>' .
                     '</td></tr>';
                 }
                 ?>
