@@ -19,8 +19,8 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
     <div class="content">
         <nav class="navbar">
-            <a href="./newitem" class="nav-button" title="Go to users"><img src="./images/people.svg" alt="People icon"></a>
-            <a href="./main" class="nav-button" title="Add new content"><img src="./images/add-file.svg" alt="Add file icon"></a>
+            <a href="./admin" class="nav-button" title="Go to users"><img src="./images/people.svg" alt="People icon"></a>
+            <a href="./add" class="nav-button" title="Add new content"><img src="./images/add-file.svg" alt="Add file icon"></a>
             <a href="./logout" class="nav-button" title="Log out"><img src="./images/logout.svg" alt="Logout icon"></a>
         </nav>
         <h1>Admin page</h1>
@@ -63,7 +63,7 @@ if (!isset($_SESSION['loggedin'])) {
                     echo '</span></a>
                         <a href="edit?id=' . $id . '" title="Update Record" data-toggle="tooltip"><img src="./images/pencil.svg" alt="Pencil Icon"></span></a>'
                         . '</span></a>
-                        <a href="delete?id=' . $id . '" title="Delete Record" data-toggle="tooltip"><img src="./images/trash.svg" alt="Trash Icon"></span></a>' .
+                        <a href="backend/deleteContent?id=' . $id . '" title="Delete Record" data-toggle="tooltip"><img src="./images/trash.svg" alt="Trash Icon"></span></a>' .
                     '</td></tr>';
                 }
                 ?>
