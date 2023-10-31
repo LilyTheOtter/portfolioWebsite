@@ -4,18 +4,6 @@ if (!isset($_SESSION['loggedin'])) {
     header("location: login");
     exit;
 };
-require_once "backend/connection.php";
-$stmt = $con->prepare('SELECT `type`, `inside`, `location`, `filename`, `content` FROM `content` WHERE `id` = ?');
-$stmt->bind_param('s', $_GET['id']);
-$stmt->execute();
-$result = $stmt->get_result();
-$row = $result->fetch_assoc();
-$type = $row['type'];
-$inside = $row['inside'];
-$location = $row['location'];
-$filename = $row['filename'];
-$content = $row['content'];
-$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,28 +24,21 @@ $id = $_GET['id'];
         </nav>
         <h1>Admin page</h1>
         <div>
-            <form action="backend/editContent.php" method="post">
+            <form action="backend/addContent.php" method="post">
                 <div>
                     <label for="type"><a>Type:</a></label>
                     <select id="type" name="type">
                         <option value="none">None</option>
-                        <?php
-                        if($type == "pdf") echo '<option value="pdf" selected>PDF</option><option value="explorer">Explorer</option>';
-                        else echo '<option value="pdf">PDF</option><option value="explorer" selected>Explorer</option>';
-                        ?>
+                        <option value="pdf">PDF</option>
+                        <option value="explorer">Explorer</option>
                     </select>
-                </div>
-                <div>
-                    <input type="hidden" name="id" id="id" value="<?php echo "$id"; ?>">
                 </div>
                 <div>
                     <label for="inside"><a>Inside:</a></label>
                     <select id="inside" name="inside">
                         <option value="none">None</option>
-                        <?php
-                        if($inside == "desktop") echo '<option value="desktop" selected>Desktop</option><option value="explorer">Explorer</option>';
-                        else echo '<option value="desktop">Desktop</option><option value="explorer" selected>Explorer</option>';
-                        ?>
+                        <option value="desktop">Desktop</option>
+                        <option value="explorer">Explorer</option>
                     </select>
                 </div>
                 <div>
@@ -74,8 +55,7 @@ $id = $_GET['id'];
                             $type = $row["type"];
                             $filenames = $row["filename"];
                             $optionName = $filenames ? $type . ": " . $filenames : $type;
-                            if($location == $id) echo ' <option value="' . $id . '" selected>' . $optionName . '</option>';
-                            else echo ' <option value="' . $id . '">' . $optionName . '</option>';
+                            echo ' <option value="' . $id . '">' . $optionName . '</option>';
                         }
                         ?>
 
@@ -83,14 +63,14 @@ $id = $_GET['id'];
                 </div>
                 <div>
                     <label for="filename"><a>Filename:</a></label>
-                    <input type="text" name="filename" id="filename" placeholder="Filename" value="<?php echo "$filename"; ?>">
+                    <input type="text" name="filename" id="filename" placeholder="Filename" value="">
                 </div>
                 <div>
                     <label for="content"><a>Content:</a></label>
-                    <textarea name="content" id="content" placeholder="Content"><?php echo "$content"; ?></textarea>
+                    <textarea name="content" id="content" placeholder="Content"></textarea>
                 </div>
                 <div>
-                    <input type="submit" value="Edit content">
+                    <input type="submit" value="Add content">
                 </div>
             </form>
         </div>
