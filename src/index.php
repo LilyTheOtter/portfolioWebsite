@@ -85,24 +85,24 @@
                                 $filename = $row['filename'];
                                 $content = $row['content'];
                                 echo '<div class="icon" id="icon' . $id . '">
-                            <img src="./images/application-pdf.svg" alt="PDF Icon">
-                            <p>' . $filename . '</p>
-                        </div> <div class="pdf-overlay" id="overlay' . $id . '">
-                            <div class="pdf-overlay-window">
-                                <div class="overlay-content-topbar">
-                                    <div class="overlay-content-topbar-icon">
                                         <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                        <p>' . $filename . '</p>
+                                    </div> <div class="pdf-overlay" id="overlay' . $id . '">
+                                    <div class="pdf-overlay-window">
+                                        <div class="overlay-content-topbar">
+                                            <div class="overlay-content-topbar-icon">
+                                                <img src="./images/application-pdf.svg" alt="PDF Icon">
+                                            </div>
+                                            <div class="overlay-content-topbar-closebutton">
+                                                <button class="closeButton" id="closeOverlay' . $id . '"><img src="./images/cross.svg" alt="Close button"></button>
+                                            </div>
+                                        </div>
+                                        <h2>' . $filename . '</h2>
+                                        <div class="pdf-overlay-content">
+                                            <p>' . $content . '</p>
+                                        </div>
                                     </div>
-                                    <div class="overlay-content-topbar-closebutton">
-                                        <button class="closeButton" id="closeOverlay' . $id . '"><img src="./images/cross.svg" alt="Close button"></button>
-                                    </div>
-                                </div>
-                                <h2>' . $filename . '</h2>
-                                <div class="pdf-overlay-content">
-                                    <p>' . $content . '</p>
-                                </div>
-                            </div>
-                        </div>';
+                                </div>';
                             };
                             echo '</div>
                                     </div>
