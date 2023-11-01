@@ -3,7 +3,7 @@ version: '3.9'
 services:
   db:
     # MySQL Image used for the database
-    image: mysql
+    image: mysql:8.2.0
     ports: 
       - 3306:3306
     volumes:
@@ -21,7 +21,7 @@ services:
   
   phpmyadmin:
     # PHP my admin to manage the database
-    image: phpmyadmin
+    image: phpmyadmin:5.2.1
     # Port 8080 is mapped to be used on the outside as to not conflict with the apache build
     ports:
       - 8080:80

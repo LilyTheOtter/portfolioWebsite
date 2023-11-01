@@ -1,4 +1,4 @@
-FROM php:8-apache
+FROM php:8.2.12-apache
 
 # This allows for rewrite mods in .htaccess
 RUN a2enmod rewrite
