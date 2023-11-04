@@ -15,7 +15,7 @@ if ($count > 0) {
             if (strlen($_POST["username"]) < 64) {
                 $bytes = random_bytes(random_int(28, 32));
                 $hexbytes = bin2hex($bytes); //salt we will be using
-                $password = hash('sha256', $hexbytes . $_POST['password']);
+                $password = hash('sha512/256', $hexbytes . $_POST['password']);
                 $statement = $con->prepare("INSERT INTO `users` (`username`, `permissiongroup`, `password`, `salt`) VALUES (?, ?, ?, ?)");
                 $statement->bind_param("ssss", $username, $permissiongroup, $password, $salt);
                 $username = $_POST["username"];
