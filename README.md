@@ -18,3 +18,6 @@ Launch the docker compose
 ```bash
 docker compose up -d
 ```
+## Create first user
+Go to "your_domain/firstlogin" or in case of local hosting most likely "localhost/firstlogin".
+Here you can create your first user.
