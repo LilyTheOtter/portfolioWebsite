@@ -30,7 +30,7 @@ $id = $_GET['id'];
 <body>
     <div class="content">
         <nav class="navbar">
-            <a href="./newitem" class="nav-button" title="Go to users"><img src="./images/people.svg" alt="People icon"></a>
+            <a href="./" class="nav-button" title="Go to users"><img src="./images/people.svg" alt="People icon"></a>
             <a href="./main" class="nav-button" title="Add new content"><img src="./images/add-file.svg" alt="Add file icon"></a>
             <a href="./logout" class="nav-button" title="Log out"><img src="./images/logout.svg" alt="Logout icon"></a>
         </nav>
