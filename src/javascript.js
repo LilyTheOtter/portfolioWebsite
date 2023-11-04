@@ -24,24 +24,24 @@ function dateTime() {
   refresh_dateTime();
 }
 
-
 // OVERLAY SCRIPT
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get all elements with the class "icon"
-  
-  const icons = document.querySelectorAll(".icon");
 
+  const icons = document.querySelectorAll(".icon");
+  console.log(icons);
   icons.forEach((icon, index) => {
     const overlay = document.getElementById(`overlay${index + 1}`);
+    console.log(overlay);
     const closeOverlayButton = document.getElementById(
       `closeOverlay${index + 1}`
     );
-    const overlayTaskbar = overlay.querySelector(
-      ".overlay-content-topbar"
-    );
+    const overlayTaskbar = overlay.querySelector(".overlay-content-topbar");
 
-    const closeButton = overlay.querySelector(".overlay-content-topbar-closebutton");
+    const closeButton = overlay.querySelector(
+      ".overlay-content-topbar-closebutton"
+    );
     const iconButton = overlay.querySelector(".overlay-content-topbar-icon");
 
     let isDragging = false;
