@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedin'])) {
-    header("location: login");
+    header("location: ../login");
     exit;
 };
 require_once "connection.php";
