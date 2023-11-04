@@ -1,4 +1,4 @@
-create schema portfolioWebsite charset set 'utf8mb4_unicode_ci';
+create schema portfolioWebsite charset set 'utf8mb4_0900_as_cs';
 use portfolioWebsite;
 CREATE TABLE `users` (
     `id` int NOT NULL AUTO_INCREMENT,
