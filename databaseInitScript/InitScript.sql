@@ -17,7 +17,7 @@ CREATE TABLE `content` (
     `inside` varchar(32),
     `location` varchar(32),
     `filename` varchar(64),
-    `disabled` BOOLEAN,
+    `disabled` BOOLEAN DEFAULT 0,
     `content` LONGTEXT,
     PRIMARY KEY(id)
 );
