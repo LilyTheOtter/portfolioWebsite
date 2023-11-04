@@ -36,9 +36,9 @@ if (!isset($_SESSION['loggedin'])) {
                 <div>
                     <label for="inside"><a>Inside:</a></label>
                     <select id="inside" name="inside">
-                        <option value="none">None</option>
-                        <option value="desktop">Desktop</option>
+                        <option value="desktop" selected>Desktop</option>
                         <option value="explorer">Explorer</option>
+                        <option value="none">None</option>
                     </select>
                 </div>
                 <div>
