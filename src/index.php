@@ -118,6 +118,21 @@
                             break;
                     }
                 }
+                $id++;
+                echo '<div class="icon" id="icon' . $id . '">
+                <img src="./images/info.svg" alt="Info center Icon">
+                <p>Info center</p>
+            </div>';
+
+                echo '<div class="info-overlay" id="overlay' . $id . '">
+                <div id="closeOverlay' . $id . '">
+                    <div class="infoText">
+                        <h3>Welcome to my website</h3>
+                        <p>To learn more about Lily you can open the pdf\'s and explorer by clicking them.</p>
+                        <p>To close this info popup, click on me!</p>
+                    </div>
+                </div>
+            </div>';
 
                 ?>
             </div>
