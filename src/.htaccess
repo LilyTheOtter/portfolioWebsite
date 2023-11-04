@@ -4,6 +4,3 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 # Changes the default page
 DirectoryIndex index.php
-# Location of error files
-ErrorDocument 404 /errors/404.php
-ErrorDocument 403 /errors/403.php
