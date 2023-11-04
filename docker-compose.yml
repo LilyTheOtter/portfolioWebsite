@@ -8,6 +8,7 @@ services:
       - 3306:3306
     volumes:
       - ./database:/var/lib/mysql
+      - ./databaseInitScript:/docker-entrypoint-initdb.d:ro
     # Using secrets for sensitive information
     secrets:
       - MYSQL_PASSWORD_FILE
