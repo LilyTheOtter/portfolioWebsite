@@ -126,6 +126,10 @@ body {
   grid-area: 2 / 3 / 7 / 9;
   background-color: #18191d;
   border-bottom-right-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .overlay-content-topbar {
