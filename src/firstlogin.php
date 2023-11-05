@@ -25,11 +25,11 @@ if ($count > 0) {
                 header("location: login");
                 exit;
             } else {
-                header("location: firstLogin?error=wrongUsername");
+                header("location: firstlogin?error=wrongUsername");
                 exit;
             };
         } else {
-            header("location: firstLogin?error=incorrect");
+            header("location: firstlogin?error=incorrect");
             exit;
         }
     };
