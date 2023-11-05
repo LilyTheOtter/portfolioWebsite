@@ -28,9 +28,9 @@ if (!isset($_SESSION['loggedin'])) {
                 <div>
                     <label for="type"><a>Type:</a></label>
                     <select id="type" name="type">
-                        <option value="none">None</option>
-                        <option value="pdf">PDF</option>
+                        <option value="pdf" selected>PDF</option>
                         <option value="explorer">Explorer</option>
+                        <option value="none">None</option>
                     </select>
                 </div>
                 <div>
